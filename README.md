@@ -1,64 +1,24 @@
-# Eines HTML i CSS I — PEC 1 (GastroCAT)
+# Eines HTML i CSS I — PAC 2 (GastroCAT multimèdia)
 
-Portal de cuina catalana (**gastronomia**): portada (`/`), llistat de receptes
-(`/categoria`), fitxes de pa amb tomàquet (`/det1`) i calçotada (`/det2`) i
-pàgina de fonts (`/links`). Workflow **npm + Parcel + PostHTML + PostCSS**.
+Evolució del portal de cuina catalana de la PAC 1 amb tècniques multimèdia del
+Mòdul 3: **imatges responsive**, **clipping** i **animació web accessible**.
 
-Web pública: https://anna-costa-eines.netlify.app/
-Repositori: https://github.com/costanna/anna-costa-eines
+## Novetats PAC 2
 
-## Requisits
+- **Imatges responsive**: cada `<img>` és ara un `<picture>` amb format WebP
+  (`?as=webp`) i JPEG de reserva, `srcset` amb 3 amplades (480/800/1280,
+  hero fins a 1920) i `sizes` segons el context. Parcel genera les variants al
+  build. `decoding="async"` i `fetchpriority` mantinguts.
+- **Clipping amb `clip-path`**: tall en diagonal a l'hero (`92svh`) i als
+  banners (`42svh`), i etiquetes amb forma de cinta a les targetes. Sense
+  suport, el navegador ignora el retall (degradació elegant).
+- **Animació web**: zoom lent de l'hero (`heroZoom`), aparició de targetes i
+  galeries amb `IntersectionObserver` (`.reveal` → `.is-visible`) i
+  transicions a botons i navegació. Tot desactivat amb
+  `prefers-reduced-motion` (bloc global `animation: none; transition: none`).
 
-- Node.js ≥ 20 i npm
+## Estructura i scripts
 
-## Instal·lació
-
-```bash
-npm install
-```
-
-## Scripts (entorns)
-
-| Ordre | Què fa |
-| --- | --- |
-| `npm run start` | Neteja i arrenca dev a http://localhost:1234 amb hot reload. |
-| `npm run build` | Neteja i genera producció minificada amb hash + source maps a `dist/`. |
-| `npm run clean` | Esborra `dist/` i `.parcel-cache` (multiplataforma). |
-| `npm run parcel:dev` / `parcel:build` | Ordres pures de Parcel sense netejar. |
-
-## Estructura
-
-```
-.
-├── src/
-│   ├── index.html (/) · categoria.html (/categoria)
-│   ├── det1.html (/det1) · det2.html (/det2) · links.html (/links)
-│   ├── index.js (Leaflet + menú + pàgina activa)
-│   ├── styles.css (responsive mobile-first, amb nesting)
-│   ├── img/*.jpg (fotos reals allotjades al repo)
-│   └── partials/header.html + footer.html (<include>)
-├── docs/ (memòria + respostes M1/M2 + document d'entrega en PDF)
-├── dist/ (generat, no es versiona)
-├── .posthtmlrc · .postcssrc · .gitignore
-├── netlify.toml (build + rewrites d'URL netes)
-└── package.json (source: src/*.html, browserslist amb IE 11)
-```
-
-## Decisions (resum)
-
-- **Parcel 2**: dev amb HMR; build amb hash, minificació i source maps.
-- **Browserslist** amb `IE 11` (versions de fa 10 anys): Lightning CSS afegeix
-  prefixos (`-ms-`) i `postcss-nesting` aplana regles; el JS és millora
-  progressiva.
-- **PostHTML + posthtml-include**: `header`/`footer` reutilitzats.
-- **PostCSS + postcss-nesting**: nesting real al CSS (`nav`, `card`, `gallery`…).
-- **Leaflet** (dependència externa visible): mapa interactiu a la portada.
-- **Responsive**: mobile-first, 700/1100px, hero `92svh`, vídeo 16:9 compatible.
-- **WCAG 2.0 AA**: landmarks, `skip-link`, `aria-*`, `alt`, `focus-visible`,
-  contrast, pàgina activa no només amb color.
-- **URLs netes** `/categoria`, `/det1`, `/det2`, `/links` via rewrites 200.
-
-## Desplegament (Netlify)
-
-- **Build command:** `npm run build` — **Publish directory:** `dist`
-- CD amb cada push a `main`.
+Igual que la PAC 1 (`npm run start` / `npm run build`), amb `source: src/*.html`
+(5 pàgines), Leaflet, PostHTML i postcss-nesting. Més detall a
+`docs/memoria-pac2.md`.
