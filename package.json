@@ -17,10 +17,16 @@
     "parcel": "^2.16.4",
     "postcss-nesting": "^14.0.3",
     "posthtml-include": "^2.0.1",
-    "rimraf": "^6.1.3"
+    "rimraf": "^6.1.3",
+    "sharp": "^0.33.5"
   },
   "source": "src/*.html",
-  "browserslist": ["> 0.5%", "last 2 versions", "not dead", "IE 11"],
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "IE 11"
+  ],
   "dependencies": {
     "leaflet": "^1.9.4"
   }

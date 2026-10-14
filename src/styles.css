@@ -23,6 +23,9 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
+/* El <picture> no ha d'alterar la maquetació: la img mana */
+.card picture, .gallery picture, .featured picture { display: contents; }
+
 .visually-hidden {
   position: absolute;
   width: 1px;

@@ -16,15 +16,10 @@
     <include src="partials/header.html"></include>
     <main id="contingut">
       <section class="page-hero" aria-labelledby="titol-links">
-        <img
-          class="page-hero__bg"
-          src="img/crema.jpg"
-          alt=""
-          width="1280"
-          height="960"
-          loading="eager"
-          fetchpriority="high"
-        />
+        <picture>
+  <source type="image/webp" srcset="img/crema.jpg?as=webp&width=480 480w, img/crema.jpg?as=webp&width=800 800w, img/crema.jpg?as=webp&width=1280 1280w" sizes="100vw">
+  <img class="page-hero__bg" src="img/crema.jpg?width=800" srcset="img/crema.jpg?width=480 480w, img/crema.jpg?width=800 800w, img/crema.jpg?width=1280 1280w" sizes="100vw" alt="" width="1280" height="960" loading="eager" fetchpriority="high" decoding="async">
+</picture>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="wrap page-hero__text">
           <h1 id="titol-links">Enllaços i fonts</h1>

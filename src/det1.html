@@ -16,15 +16,10 @@
     <include src="partials/header.html"></include>
     <main id="contingut">
       <section class="page-hero" aria-labelledby="titol-det1">
-        <img
-          class="page-hero__bg"
-          src="img/pa-destacada.jpg"
-          alt=""
-          width="1280"
-          height="625"
-          loading="eager"
-          fetchpriority="high"
-        />
+        <picture>
+  <source type="image/webp" srcset="img/pa-destacada.jpg?as=webp&width=480 480w, img/pa-destacada.jpg?as=webp&width=800 800w, img/pa-destacada.jpg?as=webp&width=1280 1280w" sizes="100vw">
+  <img class="page-hero__bg" src="img/pa-destacada.jpg?width=800" srcset="img/pa-destacada.jpg?width=480 480w, img/pa-destacada.jpg?width=800 800w, img/pa-destacada.jpg?width=1280 1280w" sizes="100vw" alt="" width="1280" height="625" loading="eager" fetchpriority="high" decoding="async">
+</picture>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="wrap page-hero__text">
           <p class="hero__kicker"><a href="/categoria">Receptes</a> · Fitxa 1 de 2</p>
@@ -40,13 +35,10 @@
       <article class="section" aria-label="Recepta del pa amb tomàquet">
         <div class="wrap wrap--narrow">
           <figure class="featured">
-            <img
-              src="img/pa-destacada.jpg"
-              alt="Llesca de pa amb tomàquet en un plat amb tomàquets i oli al fons"
-              width="1280"
-              height="625"
-              loading="eager"
-            />
+            <picture>
+  <source type="image/webp" srcset="img/pa-destacada.jpg?as=webp&width=480 480w, img/pa-destacada.jpg?as=webp&width=800 800w, img/pa-destacada.jpg?as=webp&width=1280 1280w" sizes="(min-width: 760px) 720px, 100vw">
+  <img src="img/pa-destacada.jpg?width=800" srcset="img/pa-destacada.jpg?width=480 480w, img/pa-destacada.jpg?width=800 800w, img/pa-destacada.jpg?width=1280 1280w" sizes="(min-width: 760px) 720px, 100vw" alt="Llesca de pa amb tomàquet en un plat amb tomàquets i oli al fons" width="1280" height="625" loading="eager" decoding="async">
+</picture>
             <figcaption>El pa amb tomàquet clàssic, amb pa de pagès i tomàquet madur.</figcaption>
           </figure>
           <p>
@@ -73,15 +65,24 @@
           <h2>Galeria</h2>
           <div class="gallery">
             <figure>
-              <img src="img/pa-2.jpg" alt="Torrades de pa amb tomàquet en un plat" width="1280" height="853" loading="lazy" />
+              <picture>
+  <source type="image/webp" srcset="img/pa-2.jpg?as=webp&width=480 480w, img/pa-2.jpg?as=webp&width=800 800w, img/pa-2.jpg?as=webp&width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw">
+  <img src="img/pa-2.jpg?width=800" srcset="img/pa-2.jpg?width=480 480w, img/pa-2.jpg?width=800 800w, img/pa-2.jpg?width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw" alt="Torrades de pa amb tomàquet en un plat" width="1280" height="853" loading="lazy" decoding="async">
+</picture>
               <figcaption>Torrades per compartir.</figcaption>
             </figure>
             <figure>
-              <img src="img/pa-3.jpg" alt="Pa amb tomàquet servit en un bar amb vi i tapes" width="1280" height="960" loading="lazy" />
+              <picture>
+  <source type="image/webp" srcset="img/pa-3.jpg?as=webp&width=480 480w, img/pa-3.jpg?as=webp&width=800 800w, img/pa-3.jpg?as=webp&width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw">
+  <img src="img/pa-3.jpg?width=800" srcset="img/pa-3.jpg?width=480 480w, img/pa-3.jpg?width=800 800w, img/pa-3.jpg?width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw" alt="Pa amb tomàquet servit en un bar amb vi i tapes" width="1280" height="960" loading="lazy" decoding="async">
+</picture>
               <figcaption>De tapes, al bar.</figcaption>
             </figure>
             <figure>
-              <img src="img/pa-4.jpg" alt="Pa amb tomàquet amb llesques de pernil per sobre" width="1280" height="960" loading="lazy" />
+              <picture>
+  <source type="image/webp" srcset="img/pa-4.jpg?as=webp&width=480 480w, img/pa-4.jpg?as=webp&width=800 800w, img/pa-4.jpg?as=webp&width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw">
+  <img src="img/pa-4.jpg?width=800" srcset="img/pa-4.jpg?width=480 480w, img/pa-4.jpg?width=800 800w, img/pa-4.jpg?width=1280 1280w" sizes="(min-width: 700px) 33vw, 100vw" alt="Pa amb tomàquet amb llesques de pernil per sobre" width="1280" height="960" loading="lazy" decoding="async">
+</picture>
               <figcaption>Amb pernil, la variant reina.</figcaption>
             </figure>
           </div>
