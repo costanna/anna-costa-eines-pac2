@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# URLs netes exigides per l'enunciat: /categoria, /det1, /det2 i /links
+# servides amb rewrite (200) des dels .html generats per Parcel.
+[[redirects]]
+  from = "/categoria"
+  to = "/categoria.html"
+  status = 200
+
+[[redirects]]
+  from = "/det1"
+  to = "/det1.html"
+  status = 200
+
+[[redirects]]
+  from = "/det2"
+  to = "/det2.html"
+  status = 200
+
+[[redirects]]
+  from = "/links"
+  to = "/links.html"
+  status = 200

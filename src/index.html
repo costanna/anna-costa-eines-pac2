@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GastroCAT: portal de cuina catalana amb receptes tradicionals — pa amb tomàquet, calçotada, crema catalana i escalivada. PEC 1."
+    />
+    <title>GastroCAT — Cuina catalana</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body data-page="index">
+    <include src="partials/header.html"></include>
+    <main id="contingut">
+      <section class="hero" aria-labelledby="titol">
+        <img
+          class="hero__bg"
+          src="img/hero.jpg"
+          alt="Cocció de calçots a la graella durant la Festa de la Calçotada de Valls"
+          width="1920"
+          height="1280"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__text">
+          <p class="hero__kicker">PEC 1 · Eines HTML i CSS</p>
+          <h1 id="titol">La cuina catalana en quatre mossegades</h1>
+          <p>
+            Receptes tradicionals amb fotos reals, vídeos i mapa d'origen:
+            pa amb tomàquet, calçotada, crema catalana i escalivada.
+          </p>
+          <p class="hero__actions">
+            <a class="btn" href="/categoria">Veure les receptes</a>
+            <a class="btn btn--ghost" href="/links">Fonts i crèdits</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="destacades">
+        <div class="wrap">
+          <h2 id="destacades">Receptes destacades</h2>
+          <div class="cards">
+            <article class="card">
+              <img
+                src="img/pa-destacada.jpg"
+                alt="Llesca de pa amb tomàquet en un plat"
+                width="1280"
+                height="625"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <h3>Pa amb tomàquet</h3>
+                <p>El símbol de la cuina catalana: pa de pagès, tomàquet, oli i sal.</p>
+                <a href="/det1" aria-label="Recepta completa: pa amb tomàquet">Recepta completa</a>
+              </div>
+            </article>
+            <article class="card">
+              <img
+                src="img/calcots-destacada.jpg"
+                alt="Calçots coent-se a la graella sobre el foc"
+                width="1280"
+                height="960"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <h3>Calçotada</h3>
+                <p>El ritual del foc de Valls: calçots, salsa romesco i pitets.</p>
+                <a href="/det2" aria-label="Recepta completa: calçotada">Recepta completa</a>
+              </div>
+            </article>
+            <article class="card">
+              <img
+                src="img/crema.jpg"
+                alt="Cassoleta de crema catalana amb el sucre cremat"
+                width="1280"
+                height="960"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <h3>Crema catalana</h3>
+                <p>Les postres de Sant Josep: llet, ou, canyella i crosta cruixent.</p>
+                <a href="/categoria#crema" aria-label="Veure la crema catalana al llistat">Veure al llistat</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" aria-labelledby="mapa-titol">
+        <div class="wrap">
+          <h2 id="mapa-titol">D'on venen els plats</h2>
+          <p class="lede">Mapa interactiu amb l'origen de les receptes amb fitxa completa.</p>
+          <div id="mapa" role="application" aria-label="Mapa amb l'origen del pa amb tomàquet i la calçotada"></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="consells">
+        <div class="wrap">
+          <h2 id="consells">Abans de cuinar</h2>
+          <ul class="ticks">
+            <li>Tria producte de temporada i de proximitat: tomàquet madur i oli d'oliva verge extra.</li>
+            <li>La calçotada és de novembre a abril; fora de temporada, fes escalivada.</li>
+            <li>Totes les fotos són reals i les fonts estan documentades a la pàgina d'enllaços.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <include src="partials/footer.html"></include>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Llistat de receptes de cuina catalana: pa amb tomàquet, calçotada, crema catalana i escalivada."
+    />
+    <title>Receptes — GastroCAT</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body data-page="categoria">
+    <include src="partials/header.html"></include>
+    <main id="contingut">
+      <section class="page-hero" aria-labelledby="titol-categoria">
+        <img
+          class="page-hero__bg"
+          src="img/escalivada.jpg"
+          alt=""
+          width="1280"
+          height="963"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="wrap page-hero__text">
+          <h1 id="titol-categoria">Receptes</h1>
+          <p>Quatre clàssics de la cuina catalana. Dues receptes tenen fitxa completa amb vídeo.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Llistat de receptes">
+        <div class="wrap cards cards--list">
+          <article class="card card--row" id="pa">
+            <img
+              src="img/pa-destacada.jpg"
+              alt="Llesca de pa amb tomàquet en un plat"
+              width="1280"
+              height="625"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h2>Pa amb tomàquet</h2>
+              <p>Pa de pagès fregat amb tomàquet madur, oli i sal. El plat insígnia.</p>
+              <p><a href="/det1" aria-label="Fitxa completa del pa amb tomàquet">Fitxa completa</a></p>
+            </div>
+          </article>
+
+          <article class="card card--row" id="calcots">
+            <img
+              src="img/calcots-destacada.jpg"
+              alt="Calçots coent-se a la graella sobre el foc"
+              width="1280"
+              height="960"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h2>Calçotada</h2>
+              <p>Calçots a la flama amb salsa romesco. Festa grossa a Valls cada gener.</p>
+              <p><a href="/det2" aria-label="Fitxa completa de la calçotada">Fitxa completa</a></p>
+            </div>
+          </article>
+
+          <article class="card card--row" id="crema">
+            <img
+              src="img/crema.jpg"
+              alt="Cassoleta de crema catalana amb el sucre cremat"
+              width="1280"
+              height="960"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h2>Crema catalana</h2>
+              <p>Crema de llet i ou amb crosta de sucre cremat. Típica de Sant Josep.</p>
+              <p class="card__soon">Fitxa completa properament</p>
+            </div>
+          </article>
+
+          <article class="card card--row" id="escalivada">
+            <img
+              src="img/escalivada.jpg"
+              alt="Escalivada d'albergínia i pebrot vermell amb oli"
+              width="1280"
+              height="963"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h2>Escalivada</h2>
+              <p>Verdures a la brasa —pebrot, albergínia i ceba— amb oli d'oliva.</p>
+              <p class="card__soon">Fitxa completa properament</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <include src="partials/footer.html"></include>
+  </body>
+</html>
