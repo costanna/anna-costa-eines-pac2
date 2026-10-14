@@ -374,6 +374,29 @@ main { margin: 0; padding: 0; }
 
 .table-wrap { overflow-x: auto; }
 
+/* Animacions web (només sense preferència de moviment reduït) */
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@keyframes puja {
+  from { opacity: 0; translate: 0 24px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__bg { animation: heroZoom 24s ease-out forwards; }
+
+  .reveal { opacity: 0; }
+  .reveal.is-visible { animation: puja 0.7s ease-out forwards; }
+
+  .btn { transition: transform 0.2s ease, background-color 0.2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+
+  .site-nav a { transition: background-color 0.2s ease; }
+}
+
 /* Footer: compacte i centrat */
 .site-footer { border-top: 1px solid var(--line); background: #1c1410; color: #e7e0d3; }
 .site-footer__inner {
@@ -407,4 +430,5 @@ main { margin: 0; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
