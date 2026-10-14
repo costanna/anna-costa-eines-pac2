@@ -1,5 +1,7 @@
 # Eines HTML i CSS I — PAC 2 (GastroCAT multimèdia)
 
+Repositori: https://github.com/costanna/anna-costa-eines-pac2
+
 Evolució del portal de cuina catalana de la PAC 1 amb tècniques multimèdia del
 Mòdul 3: **imatges responsive**, **clipping** i **animació web accessible**.
 
