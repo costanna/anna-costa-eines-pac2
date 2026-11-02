@@ -26,6 +26,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* El <picture> no ha d'alterar la maquetació: la img mana */
 .card picture, .gallery picture, .featured picture { display: contents; }
 
+/* Amb display: contents el <source> ocuparia una cel·la de la graella */
+picture source { display: none; }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -388,7 +391,8 @@ main { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .hero__bg { animation: heroZoom 24s ease-out forwards; }
 
-  .reveal { opacity: 0; }
+  /* Només s'amaga amb JS actiu: sense JS, el contingut ha de ser visible */
+  .js .reveal { opacity: 0; }
   .reveal.is-visible { animation: puja 0.7s ease-out forwards; }
 
   .btn { transition: transform 0.2s ease, background-color 0.2s ease; }
