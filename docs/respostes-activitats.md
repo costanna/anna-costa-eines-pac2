@@ -1,6 +1,6 @@
-# Respostes a les activitats — M1 i M2
+# Respostes a les activitats — M1, M2 i M3
 
-> Les respostes de les activitats "fes-ho i observa" descriuen el que s'hi espera trobar. Convé que les comprovis tu mateixa al navegador, perquè la interfície de les DevTools canvia sovint.
+> Les respostes de les activitats "fes-ho i observa" descriuen el que s'hi espera trobar. La interfície de les DevTools canvia sovint, de manera que alguns noms poden variar.
 
 ---
 
@@ -303,7 +303,7 @@ A `src/index.html`:
 - `header.html` **no** apareix a `dist/`. No és un punt d'entrada ni cap altre fitxer l'enllaça, només s'ha fet servir per construir `index.html` en temps de compilació.
 
 ### Publicació — Activitats 1–3
-Aquests passos necessiten els teus comptes. Els has de fer tu:
+Passos per publicar el projecte amb els comptes de GitHub i Netlify:
 
 1. **GitHub.** Crea un repositori buit, sense README, a <https://github.com/new>. Després, des de la carpeta del projecte (el repositori local ja està inicialitzat i té el primer commit):
    ```bash
@@ -312,3 +312,69 @@ Aquests passos necessiten els teus comptes. Els has de fer tu:
    ```
 2. **Netlify.** Ves a *Add new site* > *Import an existing project* > GitHub > tria el repositori. Configura *Build command* `npm run build` i *Publish directory* `dist`. Obre la URL `*.netlify.app` generada.
 3. **Continuous deployment.** Canvia un text, fes `git commit -am "Canvi"` i `git push`. Al panell *Deploys* de Netlify veuràs com es genera i es publica la versió nova.
+
+---
+
+## M3. Imatges i animació a la web
+
+### Imatges web: formats — Activitat 2
+
+| Cas | Format clàssic | Format modern | Motiu |
+| --- | --- | --- | --- |
+| Foto d'un paisatge | JPEG | AVIF (o WebP si es vol més compatibilitat) | Fotografia amb molts tons: la compressió amb pèrdua hi és molt eficient. |
+| Icona | PNG | WebP sense pèrdua | Vores netes i transparència. Si és vectorial, l'opció millor és SVG. |
+| Gràfica | PNG | WebP sense pèrdua | Text i línies nítids i pocs colors. Si es pot generar en vectorial, SVG. |
+
+### Imatges web: formats — Activitat 3
+Comprovat sobre la mateixa web GastroCAT a la pestanya Network de Chrome: les fotos se serveixen en WebP (`image/webp`) i les tessel·les del mapa en PNG. És el format esperat. Es podria millorar amb AVIF: a l'hero complet fa 276 KB enfront dels 344 KB del WebP.
+
+### Imatges responsive — Activitat 4
+En reduir la finestra, la pestanya Network mostra que el navegador només descarrega la versió que necessita. Si ja té en memòria una imatge més gran, no en baixa una de més petita.
+
+### SVG i clip-path — Activitat 1
+**Diferència entre clipping i masking**
+- El **clipping** retalla amb una forma: cada píxel queda dins (visible) o fora (invisible). La vora és neta.
+- El **masking** fa servir una imatge o un degradat: la seva lluminositat o transparència decideix quant es veu cada píxel, i per això permet transparències parcials.
+
+### Optimització d'imatges — Activitat 2
+S'ha fet amb Sharp sobre dues fotos, a la mateixa mida (pesos en KB):
+
+| Imatge | Original | PNG | JPEG 80 | WebP 70 | AVIF 50 |
+| --- | --- | --- | --- | --- | --- |
+| `hero.jpg` (1920×1280) | 669 | 5.345 | 435 | 344 | 276 |
+| `pa-destacada.jpg` (1280×625) | 173 | 1.866 | 111 | 67 | 46 |
+
+**Què observes i quina millora s'aplica?**
+La recompressió redueix un 35 % el JPEG, sense canviar les dimensions.
+
+**Varia en funció de la grandària o el format?**
+Sí. El format és el que més pesa: en una foto, PNG multiplica el pes per 8–11 i AVIF és el que més el redueix. La mida també hi influeix: en la imatge petita, WebP i AVIF estalvien més que en la gran (61 % i 73 % davant de 49 % i 59 %).
+
+### Optimització d'imatges — Activitat 3
+**Quins canvis observes en la grandària de les imatges?**
+`{ "quality": 80 }` dona exactament els mateixos pesos que no tenir el fitxer: 3.035 KB en WebP i 3.173 KB en JPEG.
+
+**Què passa si canvies el valor a un de molt baix? I al contrari?**
+Amb 30, el pes baixa a 1.301 KB de WebP i 1.056 KB de JPEG, però es perd detall fi, visible amb zoom. Amb 95, puja a 6.846 KB i 6.335 KB, i la diferència visual és mínima.
+
+**L'optimització més adequada**
+Valors separats per format, JPEG 80 i WebP 70, amb un total de 2.322 KB de WebP. Amb un sol valor, el WebP pesa més que el JPEG en moltes variants. La taula completa és a `memoria-pac2.md`.
+
+### Optimització d'imatges — Activitat 4
+**Com es transformarà l'HTML?**
+Parcel genera un fitxer per a cada combinació de paràmetres i substitueix les rutes pels noms amb hash. El `<picture>` es manté, minificat. Per exemple:
+```html
+<picture>
+  <source srcset="image.a1b2c3d4.avif" type="image/avif">
+  <source srcset="image.e5f6a7b8.webp" type="image/webp">
+  <source srcset="image.c9d0e1f2.webp" type="image/webp">
+  <img src="image.0a1b2c3d.jpeg" alt="test image">
+</picture>
+```
+
+**Quines millores aporten aquestes optimitzacions?**
+El navegador baixa el primer format que entén, de més a menys eficient, i els antics fan servir el JPEG. A més, la conversió és automàtica i les imatges es redueixen a la mida necessària sense eines externes.
+
+### Animació web en CSS — Activitat 3
+- Una **transició** anima el pas entre dos estats i necessita un canvi que la dispari, com ara `:hover` o una classe nova. És la bona opció per a canvis simples, com el botó o la navegació de GastroCAT.
+- Una **animació** es defineix amb `@keyframes`, pot tenir tants passos com calgui, es pot repetir i pot començar sola. És la bona opció per a seqüències, com el zoom `heroZoom`.
